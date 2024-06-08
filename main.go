@@ -57,8 +57,8 @@ func main() {
 
 	var urls []string
 
-    // NOTE: The following tags/identifiers appear to correspond to Anthem PPOs in NY state
-    identifiers := []string{"_39F0_", "_71B0_", "_72B0_", "_42F0_", "_39B0_", "_42B0_", "_71A0_"}
+	// NOTE: The following tags/identifiers appear to correspond to Anthem PPOs in NY state
+	identifiers := []string{"_39F0_", "_71B0_", "_72B0_", "_42F0_", "_39B0_", "_42B0_", "_71A0_"}
 
 	for dec.More() {
 		t, _ := dec.Token()
@@ -75,12 +75,12 @@ func main() {
 
 				if len(structure.InNetworkFiles) > 0 {
 					for _, file := range structure.InNetworkFiles {
-                        for _, id := range identifiers {
-                            if strings.Contains(file.Location, id) {
-                                urls = append(urls, file.Location)
-                                break;
-                            }
-                        }
+						for _, id := range identifiers {
+							if strings.Contains(file.Location, id) {
+								urls = append(urls, file.Location)
+								break
+							}
+						}
 					}
 				}
 
